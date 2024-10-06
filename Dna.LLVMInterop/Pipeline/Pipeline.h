@@ -1,9 +1,9 @@
 #pragma once
 
 #include <llvm/IR/Module.h>
-#include "llvm-c/Transforms/PassManagerBuilder.h"
+//#include "llvm-c/Transforms/PassManagerBuilder.h"
 #include "llvm/ADT/SmallVector.h"
-#include "llvm/ADT/Triple.h"
+#include "llvm/TargetParser/Triple.h"
 #include "llvm/Analysis/BasicAliasAnalysis.h"
 #include "llvm/Analysis/ScalarEvolutionAliasAnalysis.h"
 #include "llvm/Analysis/GlobalsModRef.h"
@@ -24,7 +24,7 @@
 #include "llvm/Transforms/IPO/ForceFunctionAttrs.h"
 #include "llvm/Transforms/IPO/FunctionAttrs.h"
 #include "llvm/Transforms/IPO/InferFunctionAttrs.h"
-#include "llvm/Transforms/IPO/PassManagerBuilder.h"
+//#include "LLVMAPI/Transforms/IPO/PassManagerBuilder.h"
 #include "llvm/Transforms/InstCombine/InstCombine.h"
 #include "llvm/Transforms/Instrumentation.h"
 #include "llvm/Transforms/Scalar.h"
@@ -50,11 +50,12 @@
 #include "llvm/Transforms/Scalar/SROA.h"
 #include "llvm/Transforms/Utils.h"
 #include "llvm/Transforms/Utils/Cloning.h"
-#include "llvm/Transforms/Vectorize.h"
+//#include "llvm/Transforms/Vectorize.h"
 #include "llvm/Transforms/Scalar/DeadStoreElimination.h"
 #include <llvm/InitializePasses.h>
 #include "llvm/Transforms/IPO/AlwaysInliner.h"
 
+#include "souper/Inst/Inst.h"
 #include "souper/Parser/Parser.h"
 #include <souper/Extractor/Candidates.h>
 #include <souper/Extractor/ExprBuilder.h>
@@ -72,12 +73,45 @@
 
 #include "Utilities/magic_enum.hpp"
 
-#include <API/RegionAPI/RegionAPI.h>
+#include <API/ImmutableManagedVector.h>
+#include <API/Region/RegionAPI.h>
 #include "API/ExportDef.h"
 #include <tuple>
 #include <chrono>
+#include <iostream>
+
 using namespace llvm::sl;
 
+class EExprBuilder : public souper::ExprBuilder {
+public:
+	EExprBuilder(souper::InstContext& IC) : ExprBuilder(IC) {}
+
+	using ExprBuilder::getBlockPCs;  // Rende getBlockPCs accessibile pubblicamente
+	using ExprBuilder::GetCandidateExprForReplacement;
+
+	// Implement the pure virtual method GetExprStr
+	std::string GetExprStr(const souper::BlockPCs& BPCs,
+		const std::vector<souper::InstMapping>& PCs,
+		souper::InstMapping Mapping,
+		std::vector<souper::Inst*>* ModelVars,
+		bool Negate = false,
+		bool DropUB = false) override {
+		// Your implementation here
+		return "";
+	}
+
+	// Implement the pure virtual method BuildQuery
+	std::string BuildQuery(const souper::BlockPCs& BPCs,
+		const std::vector<souper::InstMapping>& PCs,
+		souper::InstMapping Mapping,
+		std::vector<souper::Inst*>* ModelVars,
+		souper::Inst* Precondition,
+		bool Negate = false,
+		bool DropUB = false) override {
+		// Your implementation here
+		return "";
+	}
+};
 
 namespace Dna::Pipeline
 {
@@ -181,7 +215,7 @@ namespace Dna::Pipeline
 	{
 		llvm::outs() << *value;
 		llvm::outs() << "\n";
-		auto fcs = souper::ExtractCandidates(function, IC, EBC, EBO);
+		auto fcs = souper::ExtractCandidates(*function, IC, EBC, EBO);
 
 		auto cand = GetCandidate(fcs, EBO);
 		llvm::outs() << "cand: " << cand;
@@ -359,8 +393,8 @@ namespace Dna::Pipeline
 
 		// Create a persistent klee expression builder. 
 		// This is necessary because we're iteratively building queries with shared state.
-		auto EBP = souper::createKLEEBuilder(IC);
-
+		//auto EBP = souper::createKLEEBuilder(IC);
+		std::unique_ptr<EExprBuilder> EBP = std::make_unique<EExprBuilder>(IC);
 
 		// Extract the path constraints necessary to reach remill_jump.
 		// Note that due to souper limitations, the expectation here is that the value being used is
@@ -369,9 +403,10 @@ namespace Dna::Pipeline
 		// will create an expression *right* before the remill_jump call that looks like:
 		//	%pc_ptr = add i64 %pc_to_solve, i64 0
 		EBO.CandidateFilterInstruction = value;
-		FCS = souper::ExtractCandidates(function, IC, EBC, EBO);
+		FCS = souper::ExtractCandidates(*function, IC, EBC, EBO);
 		auto cand = GetCandidate(FCS, EBO);
 		souper::Inst* pcInst = IC.createVar(cand->Mapping.LHS->Width, "PcInst");
+				
 		auto indirectJumpPathConstraint = EBP->getBlockPCs(pcInst);
 
 		std::vector<ProvedConstant> newOutConstants;
@@ -527,7 +562,8 @@ namespace Dna::Pipeline
 		// But here no cloning is needed since ModelVars is a vec of reference types.
 
 		std::cout << "creating builder!" << std::endl;
-		auto EB = souper::createKLEEBuilder(*ctx);
+		//auto EB = souper::createKLEEBuilder(*ctx);
+		std::unique_ptr<EExprBuilder> EB = std::make_unique<EExprBuilder>(*ctx);
 
 		//souper::Inst* Cand = EB->GetCandidateExprForReplacement(BPCs, PCs, *mapping, precondition, negate, dropUb);
 
@@ -642,7 +678,7 @@ namespace Dna::Pipeline
 		souper::FunctionCandidateSet FCS;
 
 		EBO.CandidateFilterInstruction = value;
-		FCS = souper::ExtractCandidates(function, IC, EBC, EBO);
+		FCS = souper::ExtractCandidates(*function, IC, EBC, EBO);
 
 		// Identify the candidate
 		souper::CandidateReplacement* CR = nullptr;

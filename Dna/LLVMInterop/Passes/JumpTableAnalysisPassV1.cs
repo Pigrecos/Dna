@@ -412,7 +412,7 @@ namespace Dna.LLVMInterop.Passes
 
         private TemporaryNode CreateTemp(uint bitWidth, string name)
         {
-            var node = new TemporaryNode(tempCount, bitWidth, name);
+            var node = new TemporaryNode(tempCount, bitWidth/*, name*/);
             tempCount++;
             return node;
         }

@@ -59,11 +59,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Dna.ControlFlow\Dna.ControlFlow.csproj" />
     <ProjectReference Include="..\Dna.DataStructures\Dna.DataStructures.csproj" />
-    <ProjectReference Include="..\Dna.LLVMInterop\Dna.LLVMInterop.vcxproj">
-      <IncludeAssets>..\..\llvm-project-15.0.7.src\llvm\build\RelWithDebInfo\bin\LLVM-C.dll</IncludeAssets>
-      <Private>True</Private>
-      <CopyLocalSatelliteAssemblies>True</CopyLocalSatelliteAssemblies>
-    </ProjectReference>
     <ProjectReference Include="..\TritonTranslator\TritonTranslator\TritonTranslator.csproj" />
     <ProjectReference Include="..\unicorn-net\src\Unicorn.Net\Unicorn.Net.csproj" />
   </ItemGroup>

@@ -76,17 +76,17 @@
     <ClInclude Include="Passes\ControlFlowStructuringPass.h">
       <Filter>Passes</Filter>
     </ClInclude>
-    <ClInclude Include="API\LLVM\IR\LegacyPassManager.h">
-      <Filter>API\LLVM\IR</Filter>
+    <ClInclude Include="API\LLVMAPI\IR\LegacyPassManager.h">
+      <Filter>API\LLVMAPI\IR</Filter>
     </ClInclude>
-    <ClInclude Include="API\LLVM\Transforms\IPO\PassManagerBuilder.h">
-      <Filter>API\LLVM\Transforms\IPO</Filter>
+    <ClInclude Include="API\LLVMAPI\Transforms\IPO\PassManagerBuilder.h">
+      <Filter>API\LLVMAPI\Transforms\IPO</Filter>
     </ClInclude>
-    <ClInclude Include="API\LLVM\Transforms\Scalar.h">
-      <Filter>API\LLVM\Transforms</Filter>
+    <ClInclude Include="API\LLVMAPI\Transforms\Scalar.h">
+      <Filter>API\LLVMAPI\Transforms</Filter>
     </ClInclude>
-    <ClInclude Include="API\LLVM\Pass.h">
-      <Filter>API\LLVM</Filter>
+    <ClInclude Include="API\LLVMAPI\Pass.h">
+      <Filter>API\LLVMAPI</Filter>
     </ClInclude>
     <ClInclude Include="API\Passes\Passes.h">
       <Filter>API\Passes</Filter>
@@ -94,113 +94,50 @@
     <ClInclude Include="API\ImmutableManagedVector.h">
       <Filter>API</Filter>
     </ClInclude>
-    <ClInclude Include="API\LLVM\Analysis\MemorySSA.h">
-      <Filter>API\LLVM\Analysis</Filter>
+    <ClInclude Include="API\LLVMAPI\Analysis\MemorySSA.h">
+      <Filter>API\LLVMAPI\Analysis</Filter>
     </ClInclude>
-    <ClInclude Include="API\Remill\Arch\Arch.h">
-      <Filter>API\Remill\Arch</Filter>
+    <ClInclude Include="API\RemillAPI\Arch\Arch.h">
+      <Filter>API\RemillAPI\Arch</Filter>
     </ClInclude>
-    <ClInclude Include="API\Remill\BC\IntrinsicTable.h">
-      <Filter>API\Remill\BC</Filter>
+    <ClInclude Include="API\RemillAPI\BC\IntrinsicTable.h">
+      <Filter>API\RemillAPI\BC</Filter>
     </ClInclude>
-    <ClInclude Include="API\Remill\Arch\Instruction.h">
-      <Filter>API\Remill\Arch</Filter>
+    <ClInclude Include="API\RemillAPI\Arch\Instruction.h">
+      <Filter>API\RemillAPI\Arch</Filter>
     </ClInclude>
-    <ClInclude Include="API\Remill\BC\InstructionLifter.h">
-      <Filter>API\Remill\BC</Filter>
+    <ClInclude Include="API\RemillAPI\BC\InstructionLifter.h">
+      <Filter>API\RemillAPI\BC</Filter>
     </ClInclude>
-    <ClInclude Include="API\Remill\BC\Util.h">
-      <Filter>API\Remill\BC</Filter>
+    <ClInclude Include="API\RemillAPI\BC\Util.h">
+      <Filter>API\RemillAPI\BC</Filter>
     </ClInclude>
     <ClInclude Include="API\ImmutableManagedPair.h">
       <Filter>API</Filter>
     </ClInclude>
-    <ClInclude Include="API\Remill\Arch\Context.h">
-      <Filter>API\Remill\Arch</Filter>
+    <ClInclude Include="API\RemillAPI\Arch\Context.h">
+      <Filter>API\RemillAPI\Arch</Filter>
     </ClInclude>
-    <ClInclude Include="API\Remill\BC\Optimizer.h">
-      <Filter>API\Remill\BC</Filter>
+    <ClInclude Include="API\RemillAPI\BC\Optimizer.h">
+      <Filter>API\RemillAPI\BC</Filter>
     </ClInclude>
-    <ClInclude Include="API\LLVM\Transforms\Utils\Cloning.h">
-      <Filter>API\LLVM\Transforms\Utils</Filter>
+    <ClInclude Include="API\LLVMAPI\Transforms\Utils\Cloning.h">
+      <Filter>API\LLVMAPI\Transforms\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="API\LLVM\IR\CFG.h">
-      <Filter>API\LLVM\IR</Filter>
+    <ClInclude Include="API\LLVMAPI\IR\CFG.h">
+      <Filter>API\LLVMAPI\IR</Filter>
     </ClInclude>
     <ClInclude Include="Passes\JumpTableAnalysisPass.h">
       <Filter>Passes</Filter>
     </ClInclude>
-    <ClInclude Include="API\LLVM\Transforms\Utils.h">
-      <Filter>API\LLVM\Transforms</Filter>
+    <ClInclude Include="API\LLVMAPI\Transforms\Utils.h">
+      <Filter>API\LLVMAPI\Transforms</Filter>
     </ClInclude>
     <ClInclude Include="API\OptimizationAPI\OptimizationUtils.h">
       <Filter>API\OptimizationAPI</Filter>
     </ClInclude>
-    <ClInclude Include="API\LLVM\IR\Dominators.h">
-      <Filter>API\LLVM\IR</Filter>
-    </ClInclude>
-    <ClInclude Include="souper\include\souper\Util\LLVMUtils.h">
-      <Filter>souper</Filter>
-    </ClInclude>
-    <ClInclude Include="souper\include\souper\Util\UniqueNameSet.h">
-      <Filter>souper</Filter>
-    </ClInclude>
-    <ClInclude Include="souper\include\souper\Tool\CandidateMapUtils.h">
-      <Filter>souper</Filter>
-    </ClInclude>
-    <ClInclude Include="souper\include\souper\Util\DfaUtils.h">
-      <Filter>souper</Filter>
-    </ClInclude>
-    <ClInclude Include="souper\include\souper\SMTLIB2\Solver.h">
-      <Filter>souper</Filter>
-    </ClInclude>
-    <ClInclude Include="souper\include\souper\KVStore\KVStore.h">
-      <Filter>souper</Filter>
-    </ClInclude>
-    <ClInclude Include="souper\include\souper\Parser\Parser.h">
-      <Filter>souper</Filter>
-    </ClInclude>
-    <ClInclude Include="souper\include\souper\Inst\Inst.h">
-      <Filter>souper</Filter>
-    </ClInclude>
-    <ClInclude Include="souper\include\souper\Inst\InstGraph.h">
-      <Filter>souper</Filter>
-    </ClInclude>
-    <ClInclude Include="souper\include\souper\Infer\Preconditions.h">
-      <Filter>souper</Filter>
-    </ClInclude>
-    <ClInclude Include="souper\include\souper\Infer\Pruning.h">
-      <Filter>souper</Filter>
-    </ClInclude>
-    <ClInclude Include="souper\include\souper\Infer\EnumerativeSynthesis.h">
-      <Filter>souper</Filter>
-    </ClInclude>
-    <ClInclude Include="souper\include\souper\Infer\InstSynthesis.h">
-      <Filter>souper</Filter>
-    </ClInclude>
-    <ClInclude Include="souper\include\souper\Infer\Interpreter.h">
-      <Filter>souper</Filter>
-    </ClInclude>
-    <ClInclude Include="souper\include\souper\Infer\AliveDriver.h">
-      <Filter>souper</Filter>
-    </ClInclude>
-    <ClInclude Include="souper\include\souper\Infer\ConstantSynthesis.h">
-      <Filter>souper</Filter>
-    </ClInclude>
-    <ClInclude Include="souper\include\souper\Infer\AbstractInterpreter.h">
-      <Filter>souper</Filter>
-    </ClInclude>
-    <ClInclude Include="souper\include\souper\Extractor\Candidates.h">
-      <Filter>souper</Filter>
-    </ClInclude>
-    <ClInclude Include="souper\include\souper\Extractor\ExprBuilder.h">
-      <Filter>souper</Filter>
-    </ClInclude>
-    <ClInclude Include="souper\include\souper\Codegen\Codegen.h">
-      <Filter>souper</Filter>
-    </ClInclude>
-    <ClInclude Include="souper\include\souper\Tool\GetSolver.h">
-      <Filter>souper</Filter>
+    <ClInclude Include="API\LLVMAPI\IR\Dominators.h">
+      <Filter>API\LLVMAPI\IR</Filter>
     </ClInclude>
     <ClInclude Include="Passes\BoundsSolver.h">
       <Filter>Passes</Filter>
@@ -214,17 +151,8 @@
     <ClInclude Include="API\souper\SouperExprBuilder.h">
       <Filter>API\Souper</Filter>
     </ClInclude>
-    <ClInclude Include="souper\include\souper\Infer\Z3Driver.h">
-      <Filter>souper</Filter>
-    </ClInclude>
-    <ClInclude Include="souper\include\souper\Infer\Z3Expr.h">
-      <Filter>souper</Filter>
-    </ClInclude>
-    <ClInclude Include="souper\include\souper\Infer\Verification.h">
-      <Filter>souper</Filter>
-    </ClInclude>
-    <ClInclude Include="API\LLVM\Analysis\LoopInfo.h">
-      <Filter>API\LLVM</Filter>
+    <ClInclude Include="API\LLVMAPI\Analysis\LoopInfo.h">
+      <Filter>API\LLVMAPI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -243,87 +171,6 @@
     </ClCompile>
     <ClCompile Include="Passes\generator_jit_ast_compute.cpp">
       <Filter>Passes</Filter>
-    </ClCompile>
-    <ClCompile Include="souper\lib\Tool\CandidateMapUtils.cpp">
-      <Filter>souper</Filter>
-    </ClCompile>
-    <ClCompile Include="souper\lib\Pass\Pass.cpp">
-      <Filter>souper</Filter>
-    </ClCompile>
-    <ClCompile Include="souper\lib\SMTLIB2\smtlib_Solver.cpp">
-      <Filter>souper</Filter>
-    </ClCompile>
-    <ClCompile Include="souper\lib\Parser\Parser.cpp">
-      <Filter>souper</Filter>
-    </ClCompile>
-    <ClCompile Include="souper\lib\Inst\Inst.cpp">
-      <Filter>souper</Filter>
-    </ClCompile>
-    <ClCompile Include="souper\lib\KVStore\KVStore.cpp">
-      <Filter>souper</Filter>
-    </ClCompile>
-    <ClCompile Include="souper\lib\Infer\Preconditions.cpp">
-      <Filter>souper</Filter>
-    </ClCompile>
-    <ClCompile Include="souper\lib\Infer\Pruning.cpp">
-      <Filter>souper</Filter>
-    </ClCompile>
-    <ClCompile Include="souper\lib\Infer\InstSynthesis.cpp">
-      <Filter>souper</Filter>
-    </ClCompile>
-    <ClCompile Include="souper\lib\Infer\Interpreter.cpp">
-      <Filter>souper</Filter>
-    </ClCompile>
-    <ClCompile Include="souper\lib\Infer\ConstantSynthesis.cpp">
-      <Filter>souper</Filter>
-    </ClCompile>
-    <ClCompile Include="souper\lib\Infer\EnumerativeSynthesis.cpp">
-      <Filter>souper</Filter>
-    </ClCompile>
-    <ClCompile Include="souper\lib\Infer\AbstractInterpreter.cpp">
-      <Filter>souper</Filter>
-    </ClCompile>
-    <ClCompile Include="souper\lib\Infer\AliveDriver.cpp">
-      <Filter>souper</Filter>
-    </ClCompile>
-    <ClCompile Include="souper\lib\Extractor\Solver.cpp">
-      <Filter>souper</Filter>
-    </ClCompile>
-    <ClCompile Include="souper\lib\Extractor\ExprBuilder.cpp">
-      <Filter>souper</Filter>
-    </ClCompile>
-    <ClCompile Include="souper\lib\Extractor\KLEEBuilder.cpp">
-      <Filter>souper</Filter>
-    </ClCompile>
-    <ClCompile Include="souper\lib\Extractor\Candidates.cpp">
-      <Filter>souper</Filter>
-    </ClCompile>
-    <ClCompile Include="souper\lib\Codegen\Codegen.cpp">
-      <Filter>souper</Filter>
-    </ClCompile>
-    <ClCompile Include="souper\lib\Codegen\MachineCost.cpp">
-      <Filter>souper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\klee\lib\Expr\Expr.cpp">
-      <Filter>klee</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\klee\lib\Expr\ExprPPrinter.cpp">
-      <Filter>klee</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\klee\lib\Expr\ExprSMTLIBPrinter.cpp">
-      <Filter>klee</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\klee\lib\Expr\Updates.cpp">
-      <Filter>klee</Filter>
-    </ClCompile>
-    <ClCompile Include="souper\lib\Infer\Z3Driver.cpp">
-      <Filter>souper</Filter>
-    </ClCompile>
-    <ClCompile Include="souper\lib\Infer\Z3Expr.cpp">
-      <Filter>souper</Filter>
-    </ClCompile>
-    <ClCompile Include="souper\lib\Infer\Verification.cpp">
-      <Filter>souper</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -351,52 +198,38 @@
     <Filter Include="Pipeline">
       <UniqueIdentifier>{1e02910f-66d7-4740-8d98-568ef22a7b5b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="API\LLVM">
-      <UniqueIdentifier>{d253739e-87c9-42d0-b9f6-43fe9e55b152}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="API\LLVM\IR">
-      <UniqueIdentifier>{59a0d3ce-0239-4da0-9fe8-326184cdeecd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="API\LLVM\Transforms">
-      <UniqueIdentifier>{49bf51e1-b758-418f-b337-3393d816465d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="API\LLVM\Transforms\IPO">
-      <UniqueIdentifier>{a65f73ae-1f62-49c1-8aee-c365258964a8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="API\Passes">
       <UniqueIdentifier>{01dcc872-a1d0-4cef-b140-71e89f555cfd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="API\LLVM\Analysis">
-      <UniqueIdentifier>{be453136-4f83-4577-a1a3-b208d939ba19}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="API\Remill">
-      <UniqueIdentifier>{649b360f-23be-4c23-9d41-b450e524dd73}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="API\Remill\Arch">
-      <UniqueIdentifier>{dff884e3-4f88-4d9d-8642-97a27a9f8e99}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="API\Remill\BC">
-      <UniqueIdentifier>{aafdda83-6b6b-4ec8-8aa1-bef70a65449e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="API\LLVM\Transforms\Utils">
-      <UniqueIdentifier>{98762040-60c7-47f8-bc03-09f53a64cbaf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="souper">
-      <UniqueIdentifier>{2ab7ecaf-83fa-431e-86ea-652428c74c82}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="klee">
-      <UniqueIdentifier>{1546ac37-68c2-4e27-af6c-a883728ba42c}</UniqueIdentifier>
     </Filter>
     <Filter Include="API\Souper">
       <UniqueIdentifier>{9a1161e8-13b5-48a9-abe2-92f734c101da}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="souper\include\souper\Tool\GetSolver.h.in">
-      <Filter>souper</Filter>
-    </None>
-    <None Include="souper\include\souper\KVStore\KVSocket.h.in">
-      <Filter>souper</Filter>
-    </None>
+    <Filter Include="API\RemillAPI">
+      <UniqueIdentifier>{649b360f-23be-4c23-9d41-b450e524dd73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API\RemillAPI\Arch">
+      <UniqueIdentifier>{dff884e3-4f88-4d9d-8642-97a27a9f8e99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API\RemillAPI\BC">
+      <UniqueIdentifier>{aafdda83-6b6b-4ec8-8aa1-bef70a65449e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API\LLVMAPI">
+      <UniqueIdentifier>{d253739e-87c9-42d0-b9f6-43fe9e55b152}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API\LLVMAPI\IR">
+      <UniqueIdentifier>{59a0d3ce-0239-4da0-9fe8-326184cdeecd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API\LLVMAPI\Transforms">
+      <UniqueIdentifier>{49bf51e1-b758-418f-b337-3393d816465d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API\LLVMAPI\Transforms\IPO">
+      <UniqueIdentifier>{a65f73ae-1f62-49c1-8aee-c365258964a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API\LLVMAPI\Transforms\Utils">
+      <UniqueIdentifier>{98762040-60c7-47f8-bc03-09f53a64cbaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API\LLVMAPI\Analysis">
+      <UniqueIdentifier>{be453136-4f83-4577-a1a3-b208d939ba19}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

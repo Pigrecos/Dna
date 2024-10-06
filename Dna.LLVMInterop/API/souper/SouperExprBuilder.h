@@ -4,6 +4,7 @@
 #include <souper/Extractor/Solver.h>
 #include <API/ImmutableManagedVector.h>
 #include "API/ExportDef.h"
+#include "Pipeline/Pipeline.h"
 #pragma once
 
 // souper::ExprBuilder
@@ -28,8 +29,9 @@ namespace Dna::API {
 	// may make the code less structured. If we see big performance overhead,
 	// we may consider to combine these two parts together.
 	DNA_EXPORT souper::Inst* ExprBuilderGetBlockPCs(souper::ExprBuilder* exprBuilder, souper::Inst* root)
-	{
-		return exprBuilder->getBlockPCs(root);
+	{		
+		auto wrapper = static_cast<EExprBuilder*>(exprBuilder);
+		return wrapper->getBlockPCs(root);
 	}
 
 	//  std::string BuildQuery(InstContext &IC, const BlockPCs &BPCs,

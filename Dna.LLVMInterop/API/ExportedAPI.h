@@ -1,9 +1,12 @@
 #pragma once
 
 #include <llvm/IR/Module.h>
-#include "llvm-c/Transforms/PassManagerBuilder.h"
+//#include "llvm-c/Transforms/PassManagerBuilder.h"
+#include <llvm/Passes/PassBuilder.h>
+#include <llvm/IR/PassManager.h>
 #include "llvm/ADT/SmallVector.h"
-#include "llvm/ADT/Triple.h"
+//#include "llvm/ADT/Triple.h"
+#include "llvm/TargetParser/Triple.h"
 #include "llvm/Analysis/BasicAliasAnalysis.h"
 #include "llvm/Analysis/ScalarEvolutionAliasAnalysis.h"
 #include "llvm/Analysis/GlobalsModRef.h"
@@ -25,7 +28,7 @@
 #include "llvm/Transforms/IPO/ForceFunctionAttrs.h"
 #include "llvm/Transforms/IPO/FunctionAttrs.h"
 #include "llvm/Transforms/IPO/InferFunctionAttrs.h"
-#include "llvm/Transforms/IPO/PassManagerBuilder.h"
+#include "LLVMAPI/Transforms/IPO/PassManagerBuilder.h"
 #include "llvm/Transforms/InstCombine/InstCombine.h"
 #include "llvm/Transforms/Instrumentation.h"
 #include "llvm/Transforms/Scalar.h"
@@ -34,7 +37,7 @@
 #include "llvm/Transforms/Scalar/SimpleLoopUnswitch.h"
 #include "llvm/Transforms/Utils.h"
 #include "llvm/Transforms/Utils/Cloning.h"
-#include "llvm/Transforms/Vectorize.h"
+//#include "llvm/Transforms/Vectorize.h"
 #include <llvm/InitializePasses.h>
 
 #include "llvm/Transforms/IPO/AlwaysInliner.h"
@@ -49,25 +52,25 @@
 
 #include "remill/BC/Util.h"
 #include "remill/BC/Optimizer.h"
-#include <API/Remill/BC/Optimizer.h>
+#include <API/RemillAPI/BC/Optimizer.h>
 #include "remill/BC/Optimizer.h"
-#include <API/RegionAPI/RegionAPI.h>
-#include <API/OptimizationAPI/OptimizationAPI.h>
-#include <API/OptimizationAPI/OptimizationUtils.h>
+#include <API/Region/RegionAPI.h>
+#include <API/Optimization/OptimizationAPI.h>
+#include <API/Optimization/OptimizationUtils.h>
 #include <API/Passes/Passes.h>
-#include <API/LLVM/Analysis/LoopInfo.h>
-#include <API/LLVM/Analysis/MemorySSA.h>
-#include <API/LLVM/Transforms/Utils/Cloning.h>
+#include <API/LLVMAPI/Analysis/LoopInfo.h>
+#include <API/LLVMAPI/Analysis/MemorySSA.h>
+#include <API/LLVMAPI/Transforms/Utils/Cloning.h>
 #include "remill/Arch/Arch.h"
 #include "remill/BC/ABI.h"
 #include "remill/BC/Version.h"
 #include "remill/OS/OS.h"
-#include <API/Remill/Arch/Arch.h>
-#include <API/Remill/Arch/Instruction.h>
-#include <API/Remill/BC/IntrinsicTable.h>
-#include <API/Remill/BC/InstructionLifter.h>
-#include <API/Remill/BC/Util.h>
-#include <API/Remill/Arch/Context.h>
+#include <API/RemillAPI/Arch/Arch.h>
+#include <API/RemillAPI/Arch/Instruction.h>
+#include <API/RemillAPI/BC/IntrinsicTable.h>
+#include <API/RemillAPI/BC/InstructionLifter.h>
+#include <API/RemillAPI/BC/Util.h>
+#include <API/RemillAPI/Arch/Context.h>
 
 #include "souper/SouperInst.h"
 #include "souper/SouperCandidates.h"

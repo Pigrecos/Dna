@@ -42,13 +42,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>ClangCL</PlatformToolset>
+    <PlatformToolset>LLVM_v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>ClangCL</PlatformToolset>
+    <PlatformToolset>LLVM_v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -117,19 +117,20 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;DNALLVMINTEROP_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;DNALLVMINTEROP_EXPORTS;_WINDOWS;_USRDLL;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>C:\Users\Max\Documents\VS Code\Dna\Dna.LLVMInterop;E:/cxx-common/Deps/installed/x64-windows-static-md-rel/include;E:\LLVMInterop\klee\install\include;E:\LLVMInterop\souper\Install\include;E:\cxx-common\remill\install\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>DebugFastLink</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>LLVM-C.lib;LLVMAggressiveInstCombine.lib;LLVMAnalysis.lib;LLVMAsmParser.lib;LLVMAsmPrinter.lib;LLVMBinaryFormat.lib;LLVMBitReader.lib;LLVMBitstreamReader.lib;LLVMBitWriter.lib;LLVMCFGuard.lib;LLVMCFIVerify.lib;LLVMCodeGen.lib;LLVMCore.lib;LLVMCoroutines.lib;LLVMCoverage.lib;LLVMDebugInfoCodeView.lib;LLVMDebuginfod.lib;LLVMDebugInfoDWARF.lib;LLVMDebugInfoGSYM.lib;LLVMDebugInfoMSF.lib;LLVMDebugInfoPDB.lib;LLVMDemangle.lib;LLVMDiff.lib;LLVMDlltoolDriver.lib;LLVMDWARFLinker.lib;LLVMDWP.lib;LLVMExecutionEngine.lib;LLVMExegesis.lib;LLVMExegesisAArch64.lib;LLVMExegesisMips.lib;LLVMExegesisPowerPC.lib;LLVMExegesisX86.lib;LLVMExtensions.lib;LLVMFileCheck.lib;LLVMFrontendOpenACC.lib;LLVMFrontendOpenMP.lib;LLVMFuzzerCLI.lib;LLVMFuzzMutate.lib;LLVMGlobalISel.lib;LLVMInstCombine.lib;LLVMInstrumentation.lib;LLVMInterfaceStub.lib;LLVMInterpreter.lib;LLVMipo.lib;LLVMIRReader.lib;LLVMJITLink.lib;LLVMLibDriver.lib;LLVMLineEditor.lib;LLVMLinker.lib;LLVMLTO.lib;LLVMMC.lib;LLVMMCA.lib;LLVMMCDisassembler.lib;LLVMMCJIT.lib;LLVMMCParser.lib;LLVMMIRParser.lib;LLVMNVPTXCodeGen.lib;LLVMNVPTXDesc.lib;LLVMNVPTXInfo.lib;LLVMObjCARCOpts.lib;LLVMObjCopy.lib;LLVMObject.lib;LLVMObjectYAML.lib;LLVMOption.lib;LLVMOrcJIT.lib;LLVMOrcShared.lib;LLVMOrcTargetProcess.lib;LLVMPasses.lib;LLVMProfileData.lib;LLVMRemarks.lib;LLVMRuntimeDyld.lib;LLVMScalarOpts.lib;LLVMSelectionDAG.lib;LLVMSupport.lib;LLVMSymbolize.lib;LLVMSystemZAsmParser.lib;LLVMSystemZCodeGen.lib;LLVMSystemZDesc.lib;LLVMSystemZDisassembler.lib;LLVMSystemZInfo.lib;LLVMTableGen.lib;LLVMTableGenGlobalISel.lib;LLVMTarget.lib;LLVMTextAPI.lib;LLVMTransformUtils.lib;LLVMVEAsmParser.lib;LLVMVECodeGen.lib;LLVMVectorize.lib;LLVMVEDesc.lib;LLVMVEDisassembler.lib;LLVMVEInfo.lib;LLVMWindowsDriver.lib;LLVMWindowsManifest.lib;LLVMX86AsmParser.lib;LLVMX86CodeGen.lib;LLVMX86Desc.lib;LLVMX86Disassembler.lib;LLVMX86Info.lib;LLVMX86TargetMCA.lib;LLVMXCoreCodeGen.lib;LLVMXCoreDesc.lib;LLVMXCoreDisassembler.lib;LLVMXCoreInfo.lib;LLVMXRay.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMTableGenGlobalISel.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMTableGen.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMFuzzerCLI.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMFuzzMutate.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMFileCheck.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMInterfaceStub.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMMIRParser.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMDWARFLinker.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMDWARFLinkerParallel.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMFrontendHLSL.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMFrontendOpenACC.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMLTO.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMExtensions.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMObjCopy.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMDebuginfod.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMDebugInfoGSYM.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMDebugInfoLogicalView.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMDWP.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMInterpreter.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMOrcJIT.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMJITLink.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMARMCodeGen.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMARMAsmParser.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMARMDisassembler.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMARMDesc.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMARMInfo.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMARMUtils.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMNVPTXCodeGen.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMNVPTXDesc.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMNVPTXInfo.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMSparcCodeGen.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMSparcAsmParser.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMSparcDisassembler.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMSparcDesc.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMSparcInfo.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMWebAssemblyCodeGen.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMWebAssemblyAsmParser.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMWebAssemblyDisassembler.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMWebAssemblyDesc.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMWebAssemblyInfo.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMWebAssemblyUtils.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMX86TargetMCA.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMLineEditor.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMCoverage.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMPasses.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMIRPrinter.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMCoroutines.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMipo.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMFrontendOpenMP.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMVectorize.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMLinker.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMDlltoolDriver.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMLibDriver.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMXRay.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMWindowsDriver.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMOption.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMWindowsManifest.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LTO.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\MLIRSupportIndentedOstream.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMCFIVerify.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMDiff.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMExegesisX86.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMX86CodeGen.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMInstrumentation.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMX86AsmParser.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMX86Disassembler.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMX86Desc.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMX86Info.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMExegesisAArch64.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMAArch64CodeGen.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMAsmPrinter.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMCFGuard.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMAArch64AsmParser.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMAArch64Disassembler.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMAArch64Desc.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMAArch64Info.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMAArch64Utils.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMExegesis.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMGlobalISel.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMSelectionDAG.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMCodeGen.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMBitWriter.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMScalarOpts.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMAggressiveInstCombine.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMInstCombine.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMObjCARCOpts.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMTransformUtils.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMMCDisassembler.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMMCA.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMObjectYAML.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMMCJIT.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMExecutionEngine.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMOrcTargetProcess.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMOrcShared.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMTarget.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMAnalysis.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMProfileData.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMSymbolize.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMDebugInfoDWARF.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMDebugInfoPDB.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMDebugInfoMSF.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMRuntimeDyld.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMObject.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMIRReader.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMAsmParser.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMBitReader.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMCore.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMRemarks.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMBitstreamReader.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMMCParser.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMMC.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMDebugInfoCodeView.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMTextAPI.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMBinaryFormat.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMTargetParser.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMSupport.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMDemangle.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVM-C.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\Remarks.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\libz3.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\xed.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\gflags.lib;psapi.lib;shell32.lib;ole32.lib;uuid.lib;advapi32.lib;delayimp.lib;-delayload:shell32.dll;-delayload:ole32.dll;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;oleaut32.lib;comdlg32.lib;Ws2_32.lib;msvcrt.lib;E:\cxx-common\remill\install\lib\remill_arch.lib;E:\cxx-common\remill\install\lib\remill_bc.lib;E:\cxx-common\remill\install\lib\remill_os.lib;E:\cxx-common\remill\install\lib\remill_version.lib;E:\cxx-common\remill\install\lib\remill_arch_aarch64.lib;E:\cxx-common\remill\install\lib\remill_arch_sparc32.lib;E:\cxx-common\remill\install\lib\remill_arch_sparc64.lib;E:\cxx-common\remill\install\lib\remill_arch_x86.lib;E:\LLVMInterop\klee\install\lib\kleeBasic.lib;E:\LLVMInterop\klee\install\lib\kleeCore.lib;E:\LLVMInterop\klee\install\lib\kleeModule.lib;E:\LLVMInterop\klee\install\lib\kleeSupport.lib;E:\LLVMInterop\souper\Install\lib\kleeExpr.lib;E:\LLVMInterop\souper\Install\lib\souperCodegen.lib;E:\LLVMInterop\souper\Install\lib\souperExtractor.lib;E:\LLVMInterop\souper\Install\lib\souperInfer.lib;E:\LLVMInterop\souper\Install\lib\souperInst.lib;E:\LLVMInterop\souper\Install\lib\souperParser.lib;E:\LLVMInterop\souper\Install\lib\souperSMTLIB2.lib;E:\LLVMInterop\alive2\install\alive2.lib;E:\LLVMInterop\alive2\install\ir.lib;E:\LLVMInterop\alive2\install\smt.lib;E:\LLVMInterop\alive2\install\tools.lib;E:\LLVMInterop\alive2\install\util.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\gflags_static.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\gflags_nothreads.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\glog.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\xed-ild.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -138,7 +139,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;DNALLVMINTEROP_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;DNALLVMINTEROP_EXPORTS;_WINDOWS;_USRDLL;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -147,6 +148,7 @@
       <Optimization>Disabled</Optimization>
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>C:\Users\Max\Documents\VS Code\Dna\Dna.LLVMInterop;E:/cxx-common/Deps/installed/x64-windows-static-md-rel/include;E:\LLVMInterop\klee\install\include;E:\LLVMInterop\souper\Install\include;E:\LLVMInterop\Remill\install\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -154,7 +156,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>clangHandleLLVM.lib;LLVM-C.lib;LLVMAArch64AsmParser.lib;LLVMAArch64CodeGen.lib;LLVMAArch64Desc.lib;LLVMAArch64Disassembler.lib;LLVMAArch64Info.lib;LLVMAArch64Utils.lib;LLVMAggressiveInstCombine.lib;LLVMAMDGPUAsmParser.lib;LLVMAMDGPUCodeGen.lib;LLVMAMDGPUDesc.lib;LLVMAMDGPUDisassembler.lib;LLVMAMDGPUInfo.lib;LLVMAMDGPUTargetMCA.lib;LLVMAMDGPUUtils.lib;LLVMAnalysis.lib;LLVMARMAsmParser.lib;LLVMARMCodeGen.lib;LLVMARMDesc.lib;LLVMARMDisassembler.lib;LLVMARMInfo.lib;LLVMARMUtils.lib;LLVMAsmParser.lib;LLVMAsmPrinter.lib;LLVMAVRAsmParser.lib;LLVMAVRCodeGen.lib;LLVMAVRDesc.lib;LLVMAVRDisassembler.lib;LLVMAVRInfo.lib;LLVMBinaryFormat.lib;LLVMBitReader.lib;LLVMBitstreamReader.lib;LLVMBitWriter.lib;LLVMBPFAsmParser.lib;LLVMBPFCodeGen.lib;LLVMBPFDesc.lib;LLVMBPFDisassembler.lib;LLVMBPFInfo.lib;LLVMCFGuard.lib;LLVMCFIVerify.lib;LLVMCodeGen.lib;LLVMCodeGenTypes.lib;LLVMCore.lib;LLVMCoroutines.lib;LLVMCoverage.lib;LLVMDebugInfoBTF.lib;LLVMDebugInfoCodeView.lib;LLVMDebuginfod.lib;LLVMDebugInfoDWARF.lib;LLVMDebugInfoGSYM.lib;LLVMDebugInfoLogicalView.lib;LLVMDebugInfoMSF.lib;LLVMDebugInfoPDB.lib;LLVMDemangle.lib;LLVMDiff.lib;LLVMDlltoolDriver.lib;LLVMDWARFLinker.lib;LLVMDWARFLinkerParallel.lib;LLVMDWP.lib;LLVMExecutionEngine.lib;LLVMExegesis.lib;LLVMExegesisAArch64.lib;LLVMExegesisMips.lib;LLVMExegesisPowerPC.lib;LLVMExegesisX86.lib;LLVMExtensions.lib;LLVMFileCheck.lib;LLVMFrontendHLSL.lib;LLVMFrontendOpenACC.lib;LLVMFrontendOpenMP.lib;LLVMFuzzerCLI.lib;LLVMFuzzMutate.lib;LLVMGlobalISel.lib;LLVMHexagonAsmParser.lib;LLVMHexagonCodeGen.lib;LLVMHexagonDesc.lib;LLVMHexagonDisassembler.lib;LLVMHexagonInfo.lib;LLVMInstCombine.lib;LLVMInstrumentation.lib;LLVMInterfaceStub.lib;LLVMInterpreter.lib;LLVMipo.lib;LLVMIRPrinter.lib;LLVMIRReader.lib;LLVMJITLink.lib;LLVMLanaiAsmParser.lib;LLVMLanaiCodeGen.lib;LLVMLanaiDesc.lib;LLVMLanaiDisassembler.lib;LLVMLanaiInfo.lib;LLVMLibDriver.lib;LLVMLineEditor.lib;LLVMLinker.lib;LLVMLoongArchAsmParser.lib;LLVMLoongArchCodeGen.lib;LLVMLoongArchDesc.lib;LLVMLoongArchDisassembler.lib;LLVMLoongArchInfo.lib;LLVMLTO.lib;LLVMMC.lib;LLVMMCA.lib;LLVMMCDisassembler.lib;LLVMMCJIT.lib;LLVMMCParser.lib;LLVMMipsAsmParser.lib;LLVMMipsCodeGen.lib;LLVMMipsDesc.lib;LLVMMipsDisassembler.lib;LLVMMipsInfo.lib;LLVMMIRParser.lib;LLVMMSP430AsmParser.lib;LLVMMSP430CodeGen.lib;LLVMMSP430Desc.lib;LLVMMSP430Disassembler.lib;LLVMMSP430Info.lib;LLVMNVPTXCodeGen.lib;LLVMNVPTXDesc.lib;LLVMNVPTXInfo.lib;LLVMObjCARCOpts.lib;LLVMObjCopy.lib;LLVMObject.lib;LLVMObjectYAML.lib;LLVMOption.lib;LLVMOrcJIT.lib;LLVMOrcShared.lib;LLVMOrcTargetProcess.lib;LLVMPasses.lib;LLVMPowerPCAsmParser.lib;LLVMPowerPCCodeGen.lib;LLVMPowerPCDesc.lib;LLVMPowerPCDisassembler.lib;LLVMPowerPCInfo.lib;LLVMProfileData.lib;LLVMRemarks.lib;LLVMRISCVAsmParser.lib;LLVMRISCVCodeGen.lib;LLVMRISCVDesc.lib;LLVMRISCVDisassembler.lib;LLVMRISCVInfo.lib;LLVMRISCVTargetMCA.lib;LLVMRuntimeDyld.lib;LLVMScalarOpts.lib;LLVMSelectionDAG.lib;LLVMSparcAsmParser.lib;LLVMSparcCodeGen.lib;LLVMSparcDesc.lib;LLVMSparcDisassembler.lib;LLVMSparcInfo.lib;LLVMSupport.lib;LLVMSymbolize.lib;LLVMSystemZAsmParser.lib;LLVMSystemZCodeGen.lib;LLVMSystemZDesc.lib;LLVMSystemZDisassembler.lib;LLVMSystemZInfo.lib;LLVMTableGen.lib;LLVMTableGenCommon.lib;LLVMTableGenGlobalISel.lib;LLVMTarget.lib;LLVMTargetParser.lib;LLVMTextAPI.lib;LLVMTransformUtils.lib;LLVMVEAsmParser.lib;LLVMVECodeGen.lib;LLVMVectorize.lib;LLVMVEDesc.lib;LLVMVEDisassembler.lib;LLVMVEInfo.lib;LLVMWebAssemblyAsmParser.lib;LLVMWebAssemblyCodeGen.lib;LLVMWebAssemblyDesc.lib;LLVMWebAssemblyDisassembler.lib;LLVMWebAssemblyInfo.lib;LLVMWebAssemblyUtils.lib;LLVMWindowsDriver.lib;LLVMWindowsManifest.lib;LLVMX86AsmParser.lib;LLVMX86CodeGen.lib;LLVMX86Desc.lib;LLVMX86Disassembler.lib;LLVMX86Info.lib;LLVMX86TargetMCA.lib;LLVMXCoreCodeGen.lib;LLVMXCoreDesc.lib;LLVMXCoreDisassembler.lib;LLVMXCoreInfo.lib;LLVMXRay.lib;remill_arch.lib;remill_bc.lib;remill_os.lib;remill_version.lib;remill_arch_aarch64.lib;remill_arch_sleigh.lib;remill_arch_sparc32.lib;remill_arch_sparc64.lib;remill_arch_x86.lib;decomp.lib;sla.lib;slaSupport.lib;gflags_static.lib;gflags_nothreads_static.lib;glog.lib;xed.lib;xed-ild.lib;shlwapi.lib;libz3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\Remarks.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\libz3.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\xed.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\gflags.lib;E:\LLVMInterop\Remill\install\lib\decomp.lib;E:\LLVMInterop\Remill\install\lib\remill_arch.lib;E:\LLVMInterop\Remill\install\lib\remill_arch_aarch64.lib;E:\LLVMInterop\Remill\install\lib\remill_arch_sleigh.lib;E:\LLVMInterop\Remill\install\lib\remill_arch_sparc32.lib;E:\LLVMInterop\Remill\install\lib\remill_arch_sparc64.lib;E:\LLVMInterop\Remill\install\lib\remill_arch_x86.lib;E:\LLVMInterop\Remill\install\lib\remill_bc.lib;E:\LLVMInterop\Remill\install\lib\remill_os.lib;E:\LLVMInterop\Remill\install\lib\remill_version.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMPasses.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMCoroutines.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMIRPrinter.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMAArch64CodeGen.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMAArch64AsmParser.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMAArch64Desc.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMAArch64Info.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMAArch64Utils.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMARMCodeGen.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMipo.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMVectorize.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMFrontendOpenMP.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMLinker.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMARMAsmParser.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMARMDesc.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMARMInfo.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMARMUtils.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMInterpreter.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMMCJIT.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMExecutionEngine.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMOrcTargetProcess.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMOrcShared.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMRuntimeDyld.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMNVPTXDesc.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMNVPTXInfo.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMX86CodeGen.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMInstrumentation.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMGlobalISel.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMCFGuard.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMX86AsmParser.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMX86Desc.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMX86Info.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMMCDisassembler.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMSparcCodeGen.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMAsmPrinter.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMSelectionDAG.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMSparcAsmParser.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMSparcDesc.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMSparcInfo.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMWebAssemblyDesc.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMWebAssemblyInfo.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMWebAssemblyUtils.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMCodeGen.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMBitWriter.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMObjCARCOpts.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMScalarOpts.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMAggressiveInstCombine.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMInstCombine.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMTarget.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMTransformUtils.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMAnalysis.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMProfileData.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMSymbolize.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMDebugInfoDWARF.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMDebugInfoPDB.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMObject.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMIRReader.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMAsmParser.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMBitReader.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMCore.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMRemarks.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMBitstreamReader.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMMCParser.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMMC.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMTextAPI.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMBinaryFormat.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMTargetParser.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMDebugInfoCodeView.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMDebugInfoMSF.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMSupport.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVM-C.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMDemangle.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMCodeGenTypes.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMFrontendOffloading.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\LLVMHipStdPar.lib;E:\cxx-common\remill\install\lib\sla.lib;E:\cxx-common\remill\install\lib\slaSupport.lib;E:\LLVMInterop\klee\install\lib\kleeBasic.lib;E:\LLVMInterop\klee\install\lib\kleeCore.lib;E:\LLVMInterop\klee\install\lib\kleeModule.lib;E:\LLVMInterop\klee\install\lib\kleeSupport.lib;E:\LLVMInterop\klee\install\lib\kleaverSolver.lib;E:\LLVMInterop\souper\Install\lib\kleeExpr.lib;E:\LLVMInterop\souper\Install\lib\souperCodegen.lib;E:\LLVMInterop\souper\Install\lib\souperExtractor.lib;E:\LLVMInterop\souper\Install\lib\souperInfer.lib;E:\LLVMInterop\souper\Install\lib\souperInst.lib;E:\LLVMInterop\souper\Install\lib\souperParser.lib;E:\LLVMInterop\souper\Install\lib\souperSMTLIB2.lib;E:\LLVMInterop\alive2\install\alive2.lib;E:\LLVMInterop\alive2\install\ir.lib;E:\LLVMInterop\alive2\install\smt.lib;E:\LLVMInterop\alive2\install\tools.lib;E:\LLVMInterop\alive2\install\util.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\gflags_static.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\gflags_nothreads.lib;E:\cxx-common\Deps\installed\x64-windows-static-md-rel\lib\glog.lib;psapi.lib;shell32.lib;ole32.lib;uuid.lib;advapi32.lib;delayimp.lib;-delayload:shell32.dll;-delayload:ole32.dll;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;oleaut32.lib;comdlg32.lib;Ws2_32.lib;msvcrt.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <StackReserveSize>536870912</StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
@@ -162,17 +164,17 @@
     <ClInclude Include="API\ExportDef.h" />
     <ClInclude Include="API\ExportedAPI.h" />
     <ClInclude Include="API\ImmutableManagedPair.h" />
-    <ClInclude Include="API\LLVM\Analysis\LoopInfo.h" />
-    <ClInclude Include="API\LLVM\Analysis\MemorySSA.h" />
-    <ClInclude Include="API\LLVM\IR\CFG.h" />
-    <ClInclude Include="API\LLVM\IR\Dominators.h" />
-    <ClInclude Include="API\LLVM\IR\LegacyPassManager.h" />
-    <ClInclude Include="API\LLVM\Pass.h" />
-    <ClInclude Include="API\LLVM\Transforms\IPO\PassManagerBuilder.h" />
-    <ClInclude Include="API\LLVM\Transforms\Scalar.h" />
+    <ClInclude Include="API\LLVMAPI\Analysis\LoopInfo.h" />
+    <ClInclude Include="API\LLVMAPI\Analysis\MemorySSA.h" />
+    <ClInclude Include="API\LLVMAPI\IR\CFG.h" />
+    <ClInclude Include="API\LLVMAPI\IR\Dominators.h" />
+    <ClInclude Include="API\LLVMAPI\IR\LegacyPassManager.h" />
+    <ClInclude Include="API\LLVMAPI\Pass.h" />
+    <ClInclude Include="API\LLVMAPI\Transforms\IPO\PassManagerBuilder.h" />
+    <ClInclude Include="API\LLVMAPI\Transforms\Scalar.h" />
     <ClInclude Include="API\ImmutableManagedVector.h" />
-    <ClInclude Include="API\LLVM\Transforms\Utils.h" />
-    <ClInclude Include="API\LLVM\Transforms\Utils\Cloning.h" />
+    <ClInclude Include="API\LLVMAPI\Transforms\Utils.h" />
+    <ClInclude Include="API\LLVMAPI\Transforms\Utils\Cloning.h" />
     <ClInclude Include="API\OptimizationAPI\OptimizationAPI.h" />
     <ClInclude Include="API\OptimizationAPI\OptimizationUtils.h" />
     <ClInclude Include="API\Passes\Passes.h" />
@@ -182,13 +184,13 @@
     <ClInclude Include="API\RegionAPI\IfThenRegionAPI.h" />
     <ClInclude Include="API\RegionAPI\RegionAPI.h" />
     <ClInclude Include="API\RegionAPI\ReturnRegionAPI.h" />
-    <ClInclude Include="API\Remill\Arch\Arch.h" />
-    <ClInclude Include="API\Remill\Arch\Context.h" />
-    <ClInclude Include="API\Remill\Arch\Instruction.h" />
-    <ClInclude Include="API\Remill\BC\InstructionLifter.h" />
-    <ClInclude Include="API\Remill\BC\IntrinsicTable.h" />
-    <ClInclude Include="API\Remill\BC\Optimizer.h" />
-    <ClInclude Include="API\Remill\BC\Util.h" />
+    <ClInclude Include="API\RemillAPI\Arch\Arch.h" />
+    <ClInclude Include="API\RemillAPI\Arch\Context.h" />
+    <ClInclude Include="API\RemillAPI\Arch\Instruction.h" />
+    <ClInclude Include="API\RemillAPI\BC\InstructionLifter.h" />
+    <ClInclude Include="API\RemillAPI\BC\IntrinsicTable.h" />
+    <ClInclude Include="API\RemillAPI\BC\Optimizer.h" />
+    <ClInclude Include="API\RemillAPI\BC\Util.h" />
     <ClInclude Include="API\souper\SouperExprBuilder.h" />
     <ClInclude Include="API\souper\SouperCandidates.h" />
     <ClInclude Include="API\souper\SouperInst.h" />
@@ -205,30 +207,6 @@
     <ClInclude Include="Passes\mdl_assert.h" />
     <ClInclude Include="Passes\PassUtilities.h" />
     <ClInclude Include="Pipeline\Pipeline.h" />
-    <ClInclude Include="souper\include\souper\Codegen\Codegen.h" />
-    <ClInclude Include="souper\include\souper\Extractor\Candidates.h" />
-    <ClInclude Include="souper\include\souper\Extractor\ExprBuilder.h" />
-    <ClInclude Include="souper\include\souper\Infer\AbstractInterpreter.h" />
-    <ClInclude Include="souper\include\souper\Infer\AliveDriver.h" />
-    <ClInclude Include="souper\include\souper\Infer\ConstantSynthesis.h" />
-    <ClInclude Include="souper\include\souper\Infer\EnumerativeSynthesis.h" />
-    <ClInclude Include="souper\include\souper\Infer\InstSynthesis.h" />
-    <ClInclude Include="souper\include\souper\Infer\Interpreter.h" />
-    <ClInclude Include="souper\include\souper\Infer\Preconditions.h" />
-    <ClInclude Include="souper\include\souper\Infer\Pruning.h" />
-    <ClInclude Include="souper\include\souper\Infer\Verification.h" />
-    <ClInclude Include="souper\include\souper\Infer\Z3Driver.h" />
-    <ClInclude Include="souper\include\souper\Infer\Z3Expr.h" />
-    <ClInclude Include="souper\include\souper\Inst\Inst.h" />
-    <ClInclude Include="souper\include\souper\Inst\InstGraph.h" />
-    <ClInclude Include="souper\include\souper\KVStore\KVStore.h" />
-    <ClInclude Include="souper\include\souper\Parser\Parser.h" />
-    <ClInclude Include="souper\include\souper\SMTLIB2\Solver.h" />
-    <ClInclude Include="souper\include\souper\Tool\CandidateMapUtils.h" />
-    <ClInclude Include="souper\include\souper\Tool\GetSolver.h" />
-    <ClInclude Include="souper\include\souper\Util\DfaUtils.h" />
-    <ClInclude Include="souper\include\souper\Util\LLVMUtils.h" />
-    <ClInclude Include="souper\include\souper\Util\UniqueNameSet.h" />
     <ClInclude Include="Utilities\magic_enum.hpp" />
     <ClInclude Include="Utilities\magic_enum_containers.hpp" />
     <ClInclude Include="Utilities\magic_enum_format.hpp" />
@@ -236,43 +214,12 @@
     <ClInclude Include="Utilities\magic_enum_switch.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\klee\lib\Expr\Expr.cpp" />
-    <ClCompile Include="..\..\klee\lib\Expr\ExprPPrinter.cpp" />
-    <ClCompile Include="..\..\klee\lib\Expr\ExprSMTLIBPrinter.cpp" />
-    <ClCompile Include="..\..\klee\lib\Expr\Updates.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Passes\ClassifyingAliasAnalysisPass.cpp" />
     <ClCompile Include="Passes\compilercore_assert.cpp" />
     <ClCompile Include="Passes\ConstantConcretizationPass.cpp" />
     <ClCompile Include="Passes\ControlledNodeSplittingPass.cpp" />
     <ClCompile Include="Passes\generator_jit_ast_compute.cpp" />
-    <ClCompile Include="souper\lib\Codegen\Codegen.cpp" />
-    <ClCompile Include="souper\lib\Codegen\MachineCost.cpp" />
-    <ClCompile Include="souper\lib\Extractor\Candidates.cpp" />
-    <ClCompile Include="souper\lib\Extractor\ExprBuilder.cpp" />
-    <ClCompile Include="souper\lib\Extractor\KLEEBuilder.cpp" />
-    <ClCompile Include="souper\lib\Extractor\Solver.cpp" />
-    <ClCompile Include="souper\lib\Infer\AbstractInterpreter.cpp" />
-    <ClCompile Include="souper\lib\Infer\AliveDriver.cpp" />
-    <ClCompile Include="souper\lib\Infer\ConstantSynthesis.cpp" />
-    <ClCompile Include="souper\lib\Infer\EnumerativeSynthesis.cpp" />
-    <ClCompile Include="souper\lib\Infer\InstSynthesis.cpp" />
-    <ClCompile Include="souper\lib\Infer\Interpreter.cpp" />
-    <ClCompile Include="souper\lib\Infer\Preconditions.cpp" />
-    <ClCompile Include="souper\lib\Infer\Pruning.cpp" />
-    <ClCompile Include="souper\lib\Infer\Verification.cpp" />
-    <ClCompile Include="souper\lib\Infer\Z3Driver.cpp" />
-    <ClCompile Include="souper\lib\Infer\Z3Expr.cpp" />
-    <ClCompile Include="souper\lib\Inst\Inst.cpp" />
-    <ClCompile Include="souper\lib\KVStore\KVStore.cpp" />
-    <ClCompile Include="souper\lib\Parser\Parser.cpp" />
-    <ClCompile Include="souper\lib\Pass\Pass.cpp" />
-    <ClCompile Include="souper\lib\SMTLIB2\smtlib_Solver.cpp" />
-    <ClCompile Include="souper\lib\Tool\CandidateMapUtils.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="souper\include\souper\KVStore\KVSocket.h.in" />
-    <None Include="souper\include\souper\Tool\GetSolver.h.in" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

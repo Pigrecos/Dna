@@ -6,6 +6,8 @@
 #include "API/ExportDef.h"
 #pragma once
 
+unsigned int DebugLevel = 0;
+
 // souper::CandidateReplacement
 namespace Dna::API {
 	DNA_EXPORT souper::CandidateReplacement* CandidateReplacementConstructor(llvm::Instruction* origin, souper::InstMapping* instMapping)
@@ -132,7 +134,7 @@ namespace Dna::API {
 namespace Dna::API {
 	DNA_EXPORT souper::FunctionCandidateSet* SouperExtractCandidates(llvm::Function* function, souper::InstContext* instCtx, souper::ExprBuilderContext* ebc, souper::ExprBuilderOptions* opts)
 	{
-		auto fcs = souper::ExtractCandidates(function, *instCtx, *ebc, *opts);
+		auto fcs = souper::ExtractCandidates(*function, *instCtx, *ebc, *opts);
 		auto output = new souper::FunctionCandidateSet();
 		for (auto& block : fcs.Blocks)
 			output->Blocks.push_back(std::make_unique<souper::BlockCandidateSet>(*block));

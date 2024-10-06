@@ -1,4 +1,5 @@
 #include "souper/Parser/Parser.h"
+#include "souper/Inst/Inst.h"
 #include <souper/Extractor/Candidates.h>
 #include <souper/Extractor/ExprBuilder.h>
 #include <souper/Extractor/Solver.h>
