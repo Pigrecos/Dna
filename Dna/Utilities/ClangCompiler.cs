@@ -13,13 +13,13 @@ namespace Dna.Utilities
     public static class ClangCompiler
     {
         // TODO: Remove hardcoded path.
-        private const string clangPath = @"C:\Users\colton\source\repos\cxx-common-cmake-win\cxx-common-cmake\build\install\bin\clang.exe";
+        private const string clangPath = @"E:\cxx-common\Deps\installed\x64-windows-static-md-rel\bin\clang.exe";
 
         // TODO: Remove hardcoded path.
-        private const string objcpyPath = @"C:\Users\colton\source\repos\cxx-common-cmake-win\cxx-common-cmake\build\install\bin\llvm-objcopy.exe";
+        private const string objcpyPath = @"E:\cxx-common\Deps\installed\x64-windows-static-md-rel\bin\llvm-objcopy.exe";
 
         // TODO: Remove hardcoded path.
-        private const string optPath = @"C:\Users\colton\source\repos\cxx-common-cmake-win\cxx-common-cmake\build\install\bin\opt.exe";
+        private const string optPath = @"E:\cxx-common\Deps\installed\x64-windows-static-md-rel\bin\opt.exe";
 
         public static unsafe string CompileToWindowsDll(LLVMValueRef targetFunction, string llPath, bool overwrite = false)
         {

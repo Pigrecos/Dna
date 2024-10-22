@@ -63,12 +63,11 @@ using Dna.Reconstruction;
 //LazyLLVMFixes.InstallValueToStringBugFix(RemillUtils.LLVMValueToString);
 
 // Sample binaries sourced from: https://github.com/cnr-isti-vclab/meshlab/releases/download/MeshLab-2023.12/MeshLab2023.12-windows.exe
-bool newPipeline = true;
+bool newPipeline = false;
 if (newPipeline)
 {
     // Load the meshlab binaries
-    var meshLabPath = @"C:\Users\colton\source\repos\MeshLab Binaries\meshlab.exe";
-    // meshLabPath = @"C:\Users\colton\Downloads\VmTarget\VMTarget.exe";
+    meshLabPath = @"C:\Users\colton\Downloads\VmTarget\VMTarget.exe";
     var meshLabBin = WindowsBinary.From(meshLabPath);
     var meshLabDna = new Dna.Dna(meshLabBin);
 
@@ -105,13 +104,12 @@ var exceptions = peImage.Exceptions.GetEntries().ToList();
 var target = exceptions.Single(x => (ulong)x.Begin.Rva + bin.BaseAddress == 0x140001C70) as X64RuntimeFunction;
 */
     // Load the binary into DNA.
-    //var vmtPath = @"C:\Users\colton\Downloads\VMTarget.exe";
-    var vmtPath = @"C:\Users\colton\source\repos\Devirtualizer\Devirtualizer\Assets\devirtualizeme64_vmp_3.0.9_v1.bin";
+    var vmtPath = @"C:\Users\colton\Downloads\VMTarget.exe";
     var bin = WindowsBinary.From(vmtPath);
     var vmpDna = new Dna.Dna(bin);
 
 
-    ulong addr = 0x14009b17d;
+    ulong addr =0x14009b17d;
     var remillArch2 = new RemillArch(LLVMContextRef.Global, RemillOsId.kOSWindows, RemillArchId.kArchAMD64_AVX512);
     // 0x140001C60 = function with SEH
     var binaryFunction2 = IterativeFunctionTranslator.Translate(vmpDna, remillArch2, LLVMContextRef.Global, addr);

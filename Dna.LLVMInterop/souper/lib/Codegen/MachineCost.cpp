@@ -14,7 +14,7 @@
 
 #include "souper/Codegen/Codegen.h"
 #include "souper/Inst/Inst.h"
-#include "llvm/ADT/Optional.h"
+//#include "llvm/ADT/Optional.h"
 #include "llvm/ADT/Statistic.h"
 #include "llvm/IR/Dominators.h"
 #include "llvm/IR/IRBuilder.h"
@@ -66,7 +66,7 @@ long getCodeSize(Module &M, TargetMachine *TM) {
   raw_svector_ostream dest(DotO);
 
   legacy::PassManager pass;
-  if (TM->addPassesToEmitFile(pass, dest, nullptr, CGFT_ObjectFile)) {
+  if (TM->addPassesToEmitFile(pass, dest, nullptr, llvm::CodeGenFileType::ObjectFile)) {
     errs() << "Target machine can't emit a file of this type";
     report_fatal_error("oops");
   }
@@ -132,7 +132,7 @@ void getBackendCost(InstContext &IC, souper::Inst *I, BackendCost &BC) {
 
     auto Features = "";
     TargetOptions Opt;
-    auto RM = llvm::Optional<Reloc::Model>();
+    auto RM = std::optional<Reloc::Model>();
     auto TM = Target->createTargetMachine(T.Trip, T.CPU, Features, Opt, RM);
 
     Cost.C.push_back(getCodeSize(M, TM));

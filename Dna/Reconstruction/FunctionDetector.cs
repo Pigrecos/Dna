@@ -36,7 +36,7 @@ namespace Dna.Reconstruction
 
             var functions = new List<FunctionBounds>();
             var binary = windowsBinary;
-            var section = binary.PEFile.Sections.Single(x => x.Name.Contains("pdata"));
+            var section = binary.PEFile.Sections.Single(x => x.Name.Contains("sdata"));
             var bytes = binary.Bytes.Skip((int)section.Offset).Take((int)section.GetVirtualSize()).ToArray();
 
             byte[] offsetBytes = new byte[4];

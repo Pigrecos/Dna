@@ -10,7 +10,7 @@ namespace Dna.Utilities
     public static class IDALoader
     {
         // TODO: Remove hardcoded path.
-        private const string idaPath = @"C:\Program Files\IDA 7.5\ida64.exe";
+        private const string idaPath = @"D:\Reversing\Decompiler\IDA 9\ida64.exe";
 
         public static string Load(string exePath, bool overwrite = false)
         {

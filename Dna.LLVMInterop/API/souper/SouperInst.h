@@ -122,22 +122,22 @@ namespace Dna::API {
 
 // souper::BlockPCMapping
 namespace Dna::API {
-	souper::BlockPCMapping* BlockPcMappingConstructor(souper::Block* block, uint32_t index, souper::InstMapping* PC)
+	DNA_EXPORT souper::BlockPCMapping* BlockPcMappingConstructor(souper::Block* block, uint32_t index, souper::InstMapping* PC)
 	{
 		return new souper::BlockPCMapping(block, index, *PC);
 	}
 
-	souper::Block* BlockPcMappingGetBlock(souper::BlockPCMapping* mapping)
+	DNA_EXPORT souper::Block* BlockPcMappingGetBlock(souper::BlockPCMapping* mapping)
 	{
 		return mapping->B;
 	}
 
-	uint32_t BlockPcMappingGetPrexIdx(souper::BlockPCMapping* mapping)
+	DNA_EXPORT uint32_t BlockPcMappingGetPrexIdx(souper::BlockPCMapping* mapping)
 	{
 		return mapping->PredIdx;
 	}
 
-	souper::InstMapping* BlockPcMappingGetPc(souper::BlockPCMapping* mapping)
+	DNA_EXPORT souper::InstMapping* BlockPcMappingGetPc(souper::BlockPCMapping* mapping)
 	{
 		return &mapping->PC;
 	}

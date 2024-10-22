@@ -95,10 +95,13 @@ namespace Dna.BinaryTranslator.Unsafe
                 cfg = dna.RecursiveDescent.ReconstructCfg(funcAddress, GetKnownIndirectEdgesCallback, handlerAddresses);
 
                 (cfg, var fallthroughFromIps) = PreprocessCfg(cfg, scopeTable);
+                Console.WriteLine(cfg.ToString());
+               
 
                 // Lift the function using remill.
                 var encodedCfg = X86CfgEncoder.EncodeCfg(dna.Binary, cfg);
-                (var liftedFunction, var blockMapping, var filterFunctions) = CfgTranslator.Translate(dna.Binary.BaseAddress, arch, "C:\\Users\\colton\\Downloads\\remill-17-semantics", ctx, new BinaryFunction(encodedCfg, scopeTableTree, solvedTables.AsReadOnly()), fallthroughFromIps, CallHandlingKind.Normal);
+                (var liftedFunction, var blockMapping, var filterFunctions) = CfgTranslator.Translate(dna.Binary.BaseAddress, arch, "C:\\Users\\Max\\Documents\\Bin\\semantics", ctx, new BinaryFunction(encodedCfg, scopeTableTree, solvedTables.AsReadOnly()), fallthroughFromIps, CallHandlingKind.Normal);
+
                 liftedFunction = FunctionIsolator.IsolateFunctionIntoNewModuleWithSehSupport(arch, liftedFunction, filterFunctions.Select(x => x.LiftedFilterFunction).ToList().AsReadOnly()).function;
 
                 liftedFunction.GlobalParent.PrintToFile("translatedFunction.ll");

@@ -1484,13 +1484,13 @@ DNA_EXPORT LLVMValueRef  FfiLLVMConstNUWMul(LLVMValueRef LHSConstant, LLVMValueR
 
 DNA_EXPORT LLVMValueRef  FfiLLVMConstAnd(LLVMValueRef LHSConstant, LLVMValueRef RHSConstant)
 {
-    return LLVMConstAnd(LHSConstant, RHSConstant);
+    return nullptr; //ToDo Pigreco LLVMConstAnd(LHSConstant, RHSConstant);
 }
 
 
 DNA_EXPORT LLVMValueRef  FfiLLVMConstOr(LLVMValueRef LHSConstant, LLVMValueRef RHSConstant)
 {
-    return LLVMConstOr(LHSConstant, RHSConstant);
+    return nullptr; //ToDo Pigreco LLVMConstOr(LHSConstant, RHSConstant);
 }
 
 
@@ -1520,13 +1520,13 @@ DNA_EXPORT LLVMValueRef  FfiLLVMConstShl(LLVMValueRef LHSConstant, LLVMValueRef 
 
 DNA_EXPORT LLVMValueRef  FfiLLVMConstLShr(LLVMValueRef LHSConstant, LLVMValueRef RHSConstant)
 {
-    return LLVMConstLShr(LHSConstant, RHSConstant);
+    return nullptr; //ToDo Pigreco LLVMConstLShr(LHSConstant, RHSConstant);
 }
 
 
 DNA_EXPORT LLVMValueRef  FfiLLVMConstAShr(LLVMValueRef LHSConstant, LLVMValueRef RHSConstant)
 {
-    return LLVMConstAShr(LHSConstant, RHSConstant);
+    return nullptr; //ToDo Pigreco LLVMConstAShr(LHSConstant, RHSConstant);
 }
 
 
@@ -1550,49 +1550,49 @@ DNA_EXPORT LLVMValueRef  FfiLLVMConstTrunc(LLVMValueRef ConstantVal, LLVMTypeRef
 
 DNA_EXPORT LLVMValueRef  FfiLLVMConstSExt(LLVMValueRef ConstantVal, LLVMTypeRef ToType)
 {
-    return LLVMConstSExt(ConstantVal, ToType);
+    return nullptr; //ToDo Pigreco LLVMConstSExt(ConstantVal, ToType);
 }
 
 
 DNA_EXPORT LLVMValueRef  FfiLLVMConstZExt(LLVMValueRef ConstantVal, LLVMTypeRef ToType)
 {
-    return LLVMConstZExt(ConstantVal, ToType);
+    return nullptr; //ToDo Pigreco LLVMConstZExt(ConstantVal, ToType);
 }
 
 
 DNA_EXPORT LLVMValueRef  FfiLLVMConstFPTrunc(LLVMValueRef ConstantVal, LLVMTypeRef ToType)
 {
-    return LLVMConstFPTrunc(ConstantVal, ToType);
+    return nullptr; //ToDo Pigreco LLVMConstFPTrunc(ConstantVal, ToType);
 }
 
 
 DNA_EXPORT LLVMValueRef  FfiLLVMConstFPExt(LLVMValueRef ConstantVal, LLVMTypeRef ToType)
 {
-    return LLVMConstFPExt(ConstantVal, ToType);
+    return nullptr; //ToDo Pigreco LLVMConstFPExt(ConstantVal, ToType);
 }
 
 
 DNA_EXPORT LLVMValueRef  FfiLLVMConstUIToFP(LLVMValueRef ConstantVal, LLVMTypeRef ToType)
 {
-    return LLVMConstUIToFP(ConstantVal, ToType);
+    return nullptr; //ToDo Pigreco LLVMConstUIToFP(ConstantVal, ToType);
 }
 
 
 DNA_EXPORT LLVMValueRef  FfiLLVMConstSIToFP(LLVMValueRef ConstantVal, LLVMTypeRef ToType)
 {
-    return LLVMConstSIToFP(ConstantVal, ToType);
+    return nullptr; //ToDo Pigreco LLVMConstSIToFP(ConstantVal, ToType);
 }
 
 
 DNA_EXPORT LLVMValueRef  FfiLLVMConstFPToUI(LLVMValueRef ConstantVal, LLVMTypeRef ToType)
 {
-    return LLVMConstFPToUI(ConstantVal, ToType);
+    return nullptr; //ToDo Pigreco LLVMConstFPToUI(ConstantVal, ToType);
 }
 
 
 DNA_EXPORT LLVMValueRef  FfiLLVMConstFPToSI(LLVMValueRef ConstantVal, LLVMTypeRef ToType)
 {
-    return LLVMConstFPToSI(ConstantVal, ToType);
+    return nullptr; //ToDo Pigreco LLVMConstFPToSI(ConstantVal, ToType);
 }
 
 
@@ -1622,13 +1622,13 @@ DNA_EXPORT LLVMValueRef  FfiLLVMConstAddrSpaceCast(LLVMValueRef ConstantVal, LLV
 
 DNA_EXPORT LLVMValueRef  FfiLLVMConstZExtOrBitCast(LLVMValueRef ConstantVal, LLVMTypeRef ToType)
 {
-    return LLVMConstZExtOrBitCast(ConstantVal, ToType);
+    return nullptr; //ToDo Pigreco LLVMConstZExtOrBitCast(ConstantVal, ToType);
 }
 
 
 DNA_EXPORT LLVMValueRef  FfiLLVMConstSExtOrBitCast(LLVMValueRef ConstantVal, LLVMTypeRef ToType)
 {
-    return LLVMConstSExtOrBitCast(ConstantVal, ToType);
+    return nullptr; //ToDo Pigreco LLVMConstSExtOrBitCast(ConstantVal, ToType);
 }
 
 
@@ -1646,13 +1646,13 @@ DNA_EXPORT LLVMValueRef  FfiLLVMConstPointerCast(LLVMValueRef ConstantVal, LLVMT
 
 DNA_EXPORT LLVMValueRef  FfiLLVMConstIntCast(LLVMValueRef ConstantVal, LLVMTypeRef ToType, LLVMBool isSigned)
 {
-    return LLVMConstIntCast(ConstantVal, ToType, isSigned);
+    return nullptr; //ToDo Pigreco LLVMConstIntCast(ConstantVal, ToType, isSigned);
 }
 
 
 DNA_EXPORT LLVMValueRef  FfiLLVMConstFPCast(LLVMValueRef ConstantVal, LLVMTypeRef ToType)
 {
-    return LLVMConstFPCast(ConstantVal, ToType);
+    return nullptr; //ToDo Pigreco LLVMConstFPCast(ConstantVal, ToType);
 }
 
 

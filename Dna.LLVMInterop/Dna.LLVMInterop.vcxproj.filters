@@ -307,16 +307,16 @@
     <ClCompile Include="souper\lib\Codegen\MachineCost.cpp">
       <Filter>souper</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\klee\lib\Expr\Expr.cpp">
+    <ClCompile Include="E:\LLVMInterop\klee\lib\Expr\Expr.cpp">
       <Filter>klee</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\klee\lib\Expr\ExprPPrinter.cpp">
+    <ClCompile Include="E:\LLVMInterop\klee\lib\Expr\ExprPPrinter.cpp">
       <Filter>klee</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\klee\lib\Expr\ExprSMTLIBPrinter.cpp">
+    <ClCompile Include="E:\LLVMInterop\klee\lib\Expr\ExprSMTLIBPrinter.cpp">
       <Filter>klee</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\klee\lib\Expr\Updates.cpp">
+    <ClCompile Include="E:\LLVMInterop\klee\lib\Expr\Updates.cpp">
       <Filter>klee</Filter>
     </ClCompile>
     <ClCompile Include="souper\lib\Infer\Z3Driver.cpp">

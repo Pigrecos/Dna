@@ -40,7 +40,7 @@ DNA_EXPORT FunctionPass* CreateSCCPPass()
 //
 DNA_EXPORT Pass* CreateRedundantDbgInstEliminationPass()
 {
-    return createRedundantDbgInstEliminationPass();
+    return nullptr; //ToDo Pigreco  createRedundantDbgInstEliminationPass();
 }
 
 //===----------------------------------------------------------------------===//
@@ -92,7 +92,7 @@ DNA_EXPORT FunctionPass* CreateAggressiveDCEPass()
 //
 DNA_EXPORT FunctionPass* CreateGuardWideningPass()
 {
-    return createGuardWideningPass();
+    return nullptr; //ToDo Pigreco createGuardWideningPass();
 }
 
 //===----------------------------------------------------------------------===//
@@ -104,7 +104,7 @@ DNA_EXPORT FunctionPass* CreateGuardWideningPass()
 //
 DNA_EXPORT Pass* CreateLoopGuardWideningPass()
 {
-    return createLoopGuardWideningPass();
+    return nullptr; //ToDo Pigreco createLoopGuardWideningPass();
 }
 
 //===----------------------------------------------------------------------===//
@@ -168,7 +168,7 @@ DNA_EXPORT Pass* CreateLICMPass2(unsigned LicmMssaOptCap, unsigned LicmMssaNoAcc
 //
 DNA_EXPORT Pass* CreateLoopSinkPass()
 {
-    return createLoopSinkPass();
+    return nullptr; //ToDo Pigreco createLoopSinkPass();
 }
 
 //===----------------------------------------------------------------------===//
@@ -177,7 +177,7 @@ DNA_EXPORT Pass* CreateLoopSinkPass()
 //
 DNA_EXPORT Pass* CreateLoopPredicationPass()
 {
-    return createLoopPredicationPass();
+    return nullptr; //ToDo Pigreco createLoopPredicationPass();
 }
 
 //===----------------------------------------------------------------------===//
@@ -215,7 +215,7 @@ DNA_EXPORT Pass* CreateLoopStrengthReducePass()
 //
 DNA_EXPORT Pass* CreateLoopInstSimplifyPass()
 {
-    return createLoopInstSimplifyPass();
+    return nullptr; //ToDo Pigreco createLoopInstSimplifyPass();
 }
 
 //===----------------------------------------------------------------------===//
@@ -278,7 +278,7 @@ DNA_EXPORT Pass* CreateLoopIdiomPass()
 //
 DNA_EXPORT FunctionPass* CreateDemoteRegisterToMemoryPass()
 {
-    return createDemoteRegisterToMemoryPass();
+    return nullptr; //ToDo Pigreco createDemoteRegisterToMemoryPass();
 }
 
 extern char& DemoteRegisterToMemoryID;
@@ -394,7 +394,7 @@ DNA_EXPORT FunctionPass* CreateGVNSinkPass()
 //
 DNA_EXPORT FunctionPass* CreateMergedLoadStoreMotionPass(bool SplitFooterBB)
 {
-    return createMergedLoadStoreMotionPass(SplitFooterBB);
+    return nullptr; //ToDo Pigreco createMergedLoadStoreMotionPass(SplitFooterBB);
 }
 
 //===----------------------------------------------------------------------===//
@@ -480,7 +480,7 @@ DNA_EXPORT Pass* CreateLowerAtomicPass()
 //
 DNA_EXPORT Pass* CreateLowerGuardIntrinsicPass()
 {
-    return createLowerGuardIntrinsicPass();
+    return nullptr; //ToDo Pigreco createLowerGuardIntrinsicPass();
 }
 
 //===----------------------------------------------------------------------===//
@@ -508,7 +508,7 @@ DNA_EXPORT Pass* CreateLowerMatrixIntrinsicsMinimalPass()
 //
 DNA_EXPORT Pass* CreateLowerWidenableConditionPass()
 {
-    return createLowerWidenableConditionPass();
+    return nullptr; //ToDo Pigreco createLowerWidenableConditionPass();
 }
 
 //===----------------------------------------------------------------------===//
@@ -548,7 +548,7 @@ extern char& InferAddressSpacesID;
 // "block_weights" metadata.
 DNA_EXPORT FunctionPass* CreateLowerExpectIntrinsicPass()
 {
-    return createLowerExpectIntrinsicPass();
+    return nullptr; //ToDo Pigreco createLowerExpectIntrinsicPass();
 }
 
 //===----------------------------------------------------------------------===//
@@ -709,7 +709,7 @@ DNA_EXPORT FunctionPass* CreateLibCallsShrinkWrapPass()
 //
 DNA_EXPORT Pass* CreateLoopSimplifyCFGPass()
 {
-    return createLoopSimplifyCFGPass();
+    return nullptr; //ToDo Pigreco createLoopSimplifyCFGPass();
 }
 
 //===----------------------------------------------------------------------===//

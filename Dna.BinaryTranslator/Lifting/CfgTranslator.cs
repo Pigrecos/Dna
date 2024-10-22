@@ -69,7 +69,7 @@ namespace Dna.BinaryTranslator.Lifting
             )
         {
             var ctx = LLVMContextRef.Global;
-            return Translate(imagebase, arch, "C:\\Users\\colton\\Downloads\\remill-17-semantics", ctx, binaryFunction, fallthroughFromIps, callHandlingKind);
+            return Translate(imagebase, arch, "C:\\Users\\Max\\Documents\\Bin\\semantics", ctx, binaryFunction, fallthroughFromIps, callHandlingKind);
         }
 
         public static (LLVMValueRef function, BlockMapping blockMapping, IReadOnlyList<LiftedSehEntry> filterFunctions) Translate(

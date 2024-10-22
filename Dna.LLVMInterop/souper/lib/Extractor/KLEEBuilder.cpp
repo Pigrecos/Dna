@@ -12,9 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "klee/Expr.h"
-#include "klee/util/ExprPPrinter.h"
-#include "klee/util/ExprSMTLIBPrinter.h"
+#include "klee/Expr/Expr.h"
+#include "klee/Expr/ArrayCache.h"
+#include "klee/Expr/ExprPPrinter.h"
+#include "klee/Expr/ExprSMTLIBPrinter.h"
 #include "souper/Extractor/ExprBuilder.h"
 #include "llvm/ADT/SmallVector.h"
 #include "llvm/Analysis/LoopInfo.h"
@@ -22,6 +23,11 @@
 
 using namespace klee;
 using namespace souper;
+
+// All'inizio del file o appena prima della definizione di Arrays
+struct NoOpArrayDeleter {
+    void operator()(const Array* ptr) const {}
+};
 
 namespace {
 
@@ -32,9 +38,12 @@ static llvm::cl::opt<bool> DumpKLEEExprs(
 
 class KLEEBuilder : public ExprBuilder {
   UniqueNameSet ArrayNames;
-  std::vector<std::unique_ptr<Array>> Arrays;
+  //std::vector<std::unique_ptr<Array>> Arrays;
+  std::vector<std::unique_ptr<const Array, NoOpArrayDeleter>> Arrays;
   std::map<Inst *, ref<Expr>> ExprMap;
   std::vector<Inst *> Vars;
+
+  ArrayCache arrayCache;
 
 public:
   KLEEBuilder(InstContext &IC) : ExprBuilder(IC) {}
@@ -66,7 +75,9 @@ public:
                          Inst *Precondition, bool Negate, bool DropUB) override {
     std::string SMTStr;
     llvm::raw_string_ostream SMTSS(SMTStr);
-    ConstraintManager Manager;
+
+    ConstraintSet constraints;
+    //ConstraintManager Manager(constraints);
     Inst *Cand = GetCandidateExprForReplacement(BPCs, PCs, Mapping, Precondition, Negate, DropUB);
 
     printf("cand length: %zu\n", strlen(Cand->Print()));
@@ -74,7 +85,7 @@ public:
       return std::string();
     prepopulateExprMap(Cand);
     ref<Expr> E = get(Cand);
-    Query KQuery(Manager, E);
+    Query KQuery(constraints, E);
     ExprSMTLIBPrinter Printer;
     Printer.setOutput(SMTSS);
     Printer.setQuery(KQuery);
@@ -489,11 +500,12 @@ private:
       NameStr = ("a" + Name).str();
     else
       NameStr = Name;
-    Arrays.emplace_back(
-     new Array(ArrayNames.makeName(NameStr), 1, 0, 0, Expr::Int32, Width));
+
+    const Array* NewArray = arrayCache.CreateArray(ArrayNames.makeName(NameStr), 1, nullptr, nullptr, Expr::Int32, Width);
+    //Arrays.emplace_back(new Array(ArrayNames.makeName(NameStr), 1, 0, 0, Expr::Int32, Width));
     Vars.push_back(Origin);
 
-    UpdateList UL(Arrays.back().get(), 0);
+    UpdateList UL(NewArray, 0);
     return ReadExpr::create(UL, klee::ConstantExpr::alloc(0, Expr::Int32));
   }
 

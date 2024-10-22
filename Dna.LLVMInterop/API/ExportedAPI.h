@@ -1,9 +1,9 @@
 #pragma once
 
 #include <llvm/IR/Module.h>
-#include "llvm-c/Transforms/PassManagerBuilder.h"
+//#include "llvm-c/Transforms/PassManagerBuilder.h"
 #include "llvm/ADT/SmallVector.h"
-#include "llvm/ADT/Triple.h"
+#include "llvm/TargetParser/Triple.h"
 #include "llvm/Analysis/BasicAliasAnalysis.h"
 #include "llvm/Analysis/ScalarEvolutionAliasAnalysis.h"
 #include "llvm/Analysis/GlobalsModRef.h"
@@ -34,7 +34,7 @@
 #include "llvm/Transforms/Scalar/SimpleLoopUnswitch.h"
 #include "llvm/Transforms/Utils.h"
 #include "llvm/Transforms/Utils/Cloning.h"
-#include "llvm/Transforms/Vectorize.h"
+//#include "llvm/Transforms/Vectorize.h"
 #include <llvm/InitializePasses.h>
 
 #include "llvm/Transforms/IPO/AlwaysInliner.h"
